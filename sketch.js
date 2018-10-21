@@ -1,5 +1,6 @@
 function preload(){
   // put preload code here
+  background(255,0,0);
 }
 
 function setup() {
