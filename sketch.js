@@ -10,7 +10,7 @@ var fft;
 
 
 function preload(){
-  mySong = loadSound("./assets/edCastle.mp3");
+  mySong = loadSound("./assets/sandCastle.mp3");
   myImg = loadImage('./assets/beach.jpg');
   maskImage = loadImage('./assets/forma.png');
 
@@ -48,7 +48,10 @@ function draw() {
 
 
     mCanvas = createCanvas(windowWidth,windowHeight);
-    background(255,255,255);
+    background(198, 216, 236);
+
+
+
     myImg.mask(maskImage,0,0);
     imageMode(CENTER);
   image(myImg,width/2 , height/2, myImg.width/8, myImg.height/8);
@@ -60,6 +63,7 @@ image(stop,width/2,height/2 + 270,stop.width/18, stop.height/18); } else {image(
 
 
 var spectrum = fft.analyze();
+
 
 
 
@@ -117,10 +121,11 @@ fill(255,0,0);
   ellipse(width/2,height/2, volume, volume);
 
 
-for ( var i = 0; i<50; i =i+1) {
-  fill('red');
-  ellipse(random()*width,random()*height, volume/14, volume/14);
-}
+  for ( var i = 0; i<85; i =i+1) {
+    fill(volume+120, volume*random(), volume);
+    ellipseMode(CENTER);
+    ellipse(width/3 + random()*width/3 , height- 150, volume/18, volume/18);
+  }
 
 
 
